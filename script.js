@@ -7,15 +7,11 @@ function preload() {
 
 function setup() {
     createCanvas(800, 600);
-    // let font = loadFont('Arial.ttf');
     textFont(font);
     textSize(200);
     let points = font.textToPoints(textToDisplay, width / 2 - textWidth(textToDisplay) / 2, height / 2 + textSize() / 3);
-    console.log(points)
 
     points = addPointsBetweenAll(points, 2);
-    console.log(points)
-    // console.log(newPoints)
     for (let i = 0; i < points.length; i++) {
         let particle = new Particle(points[i].x, points[i].y);
         particles.push(particle);
